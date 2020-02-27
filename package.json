@@ -1,0 +1,50 @@
+{
+  "name": "__PACKAGE_IDENTIFIER__",
+  "version": "0.0.1",
+  "description": "__MODULEDESC__",
+  "author": "__USERFULLNAME__ <__USEREMAIL__>",
+  "homepage": "__PROJECTURL__/tree/master/packages/__MODULENAME__#readme",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "main/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": ["main", "assets"],
+  "publishConfig": {
+    "access": "__ACCESS__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "__PROJECTURL__"
+  },
+  "scripts": {
+    "build": "babel src --out-dir main --delete-dir-on-start",
+    "prepare": "yarn build",
+    "lint": "eslint src --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
+  },
+  "bugs": {
+    "url": "__PROJECTURL__/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.4",
+    "@pyramation/babel-preset-env": "^0.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "5.2.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "regenerator-runtime": "^0.13.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.2"
+  }
+}
