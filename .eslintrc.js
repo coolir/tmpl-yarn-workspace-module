@@ -26,10 +26,10 @@ module.exports = {
       'WithStatement'
     ],
     'no-unused-vars': [
-      1,
+      0,
       {
         ignoreSiblings: true,
-        argsIgnorePattern: 'res|next|^_'
+        argsIgnorePattern: 'React|res|next|^_'
       }
     ],
     'prefer-const': [
@@ -46,6 +46,7 @@ module.exports = {
     ],
     'no-console': 1,
     'comma-dangle': 2,
+    'jsx-quotes': [2, "prefer-double"],
     quotes: [
       2,
       'single',
