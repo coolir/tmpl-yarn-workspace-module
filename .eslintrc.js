@@ -18,6 +18,7 @@ module.exports = {
     'no-debugger': 2,
     'no-alert': 2,
     'no-await-in-loop': 0,
+    'no-prototype-builtins': 0,
     'no-return-assign': ['error', 'except-parens'],
     'no-restricted-syntax': [
       2,
