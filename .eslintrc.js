@@ -1,6 +1,6 @@
 module.exports = {
-  plugins: ['prettier'],
-  extends: ['eslint:recommended', 'prettier', 'prettier/react'],
+  plugins: ['prettier', 'react-hooks'],
+  extends: ['eslint:recommended', 'prettier', 'prettier/react', 'plugin:react-hooks/recommended'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 11,
@@ -10,7 +10,7 @@ module.exports = {
     }
   },
   env: {
-    es6:true,
+    es6: true,
     browser: true,
     node: true,
     jest: true
@@ -48,7 +48,8 @@ module.exports = {
     ],
     'no-console': 1,
     'comma-dangle': 2,
-    'jsx-quotes': [2, "prefer-double"],
+    'jsx-quotes': [2, 'prefer-double'],
+    'linebreak-style': ['error', 'unix'],
     quotes: [
       2,
       'single',

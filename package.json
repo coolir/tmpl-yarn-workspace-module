@@ -6,11 +6,15 @@
   "homepage": "__PROJECTURL__/tree/master/packages/__MODULENAME__#readme",
   "license": "SEE LICENSE IN LICENSE",
   "main": "main/index.js",
+  "module": "module/index.js",
   "directories": {
     "lib": "src",
     "test": "__tests__"
   },
-  "files": ["main", "assets"],
+  "files": [
+    "main",
+    "module"
+  ],
   "publishConfig": {
     "access": "__ACCESS__"
   },
@@ -19,8 +23,10 @@
     "url": "__PROJECTURL__"
   },
   "scripts": {
-    "build": "babel src --out-dir main --delete-dir-on-start",
-    "prepare": "yarn build",
+    "build:main": "BABEL_ENV=production babel src --out-dir main --delete-dir-on-start",
+    "build:module": "MODULE=true babel src --out-dir module --delete-dir-on-start",
+    "build": "npm run build:module && npm run build:main",
+    "prepare": "npm run build",
     "lint": "eslint src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -32,13 +38,20 @@
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.8.4",
-    "@pyramation/babel-preset-env": "0.1.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-export-default-from": "7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.9.6",
+    "@babel/plugin-transform-runtime": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "babel-plugin-macros": "2.8.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "eslint": "^6.8.0",
-    "eslint-config-react-app": "5.2.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react-app": "5.2.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-hooks": "4.0.0",
     "eslint-plugin-react": "^7.18.3",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
