@@ -13,15 +13,20 @@ package-lock.json
 yarn.lock
 
 # project files
-src
-test
-__tests__
 __fixtures__
-examples
-CHANGELOG.md
-.travis.yml
+__tests__
+.babelrc
+.babelrc.js
 .editorconfig
 .eslintignore
 .eslintrc
-.babelrc
+.eslintrc.js
 .gitignore
+.travis.yml
+.vscode
+CHANGELOG.md
+examples
+jest.config.js
+package.json
+src
+test
